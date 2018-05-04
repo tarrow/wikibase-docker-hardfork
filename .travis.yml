@@ -10,7 +10,9 @@ env:
  - IMAGE_PATH=wdqs-frontend/latest/
  - IMAGE_PATH=wdqs-proxy/latest/
 
-script: bash ./$IMAGE_PATH/.travis/build.sh
+script:
+ - bash ./travis/docker-push-setup.sh
+ - bash ./$IMAGE_PATH/.travis/build-deploy.sh
 
 jobs:
   include:
@@ -21,5 +23,5 @@ jobs:
 
 stages:
   - prebuild
-  - test
   - docker-compose test
+  - test
