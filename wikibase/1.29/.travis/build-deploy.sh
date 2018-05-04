@@ -4,6 +4,6 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 docker build "$DIR/../" -t wikibase/wikibase:1.29 -t wikibase/wikibase:legacy
 
 if [ "$SHOULD_DOCKER_PUSH" = true ]; then
-    docker push wikibase/wikibase:1.29
-    docker push wikibase/wikibase:legacy
+    docker push tarrow/wikibase:1.29
+    docker push tarrow/wikibase:legacy
 fi
