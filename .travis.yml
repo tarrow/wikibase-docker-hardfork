@@ -11,7 +11,7 @@ env:
  - IMAGE_PATH=wdqs-proxy/latest/
 
 script:
- - bash ./travis/docker-push-setup.sh
+ - source ./travis/docker-push-setup.sh
  - bash ./$IMAGE_PATH/.travis/build-deploy.sh
 
 jobs:
